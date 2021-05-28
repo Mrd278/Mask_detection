@@ -1,0 +1,12 @@
+import os
+
+folders = ['RWMFD_part_2_pro']
+path = r'D:\\Mridul\\vkarma\\MaskDetection\\Images'
+
+
+n = 0
+for out_folder in folders:
+    for folder in out_folder:
+        for image in os.scandir(folder):
+            n+=1
+            os.rename(image.path, os.path.join(path, '{:06}.jpg'.format(n)))
